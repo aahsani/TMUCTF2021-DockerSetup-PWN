@@ -1,0 +1,34 @@
+#!/bin/sh
+
+
+cd /home/ubuntu/PWN/1-warmup
+sudo docker build -t warmup .
+dos2unix Dockerfile ctf.xinetd start.sh bin/flag.txt
+sudo docker run -d -p 7000:9999 warmup:latest
+
+cd /home/ubuntu/PWN/2-babypwn
+sudo docker build -t babypwn .
+dos2unix Dockerfile ctf.xinetd start.sh bin/flag.txt
+sudo docker run -d -p 7010:9999 babypwn:latest
+
+
+cd /home/ubuntu/PWN/3-AreYouAdmin
+sudo docker build -t areyouadmin .
+dos2unix Dockerfile ctf.xinetd start.sh bin/flag.txt
+sudo docker run -d -p 7020:9999 areyouadmin:latest
+
+cd /home/ubuntu/PWN/4-canary
+sudo docker build -t canary .
+dos2unix Dockerfile ctf.xinetd start.sh bin/flag.txt
+sudo docker run -d -p 7030:9999 canary:latest
+
+
+cd /home/ubuntu/PWN/5-securitycode
+sudo docker build -t securitycode .
+dos2unix Dockerfile ctf.xinetd start.sh bin/flag.txt
+sudo docker run -d -p 7040:9999 securitycode:latest
+
+cd /home/ubuntu/PWN/6-fakesurvey
+sudo docker build -t fakesurvey .
+dos2unix Dockerfile ctf.xinetd start.sh bin/flag.txt
+sudo docker run -d -p 7050:9999 fakesurvey:latest
